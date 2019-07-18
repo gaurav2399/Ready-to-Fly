@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit
 object ServiceBuilder {
 
     //value chjange me myself
-    private const val URL="http://192.168.43.56:9000"
+    private const val URL="https://gaurav-server.herokuapp.com/"
 
     //Create logger
     private val logger=HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)

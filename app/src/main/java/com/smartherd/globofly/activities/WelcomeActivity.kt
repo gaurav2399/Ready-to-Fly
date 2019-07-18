@@ -24,11 +24,11 @@ class WelcomeActivity : AppCompatActivity() {
         val messageService:MessageService = ServiceBuilder.buildService(MessageService::class.java)
 
         //port address reference to emulator
-        val requestCall:Call<String> = messageService.getMessages("http://10.0.2.2:7000/messages")
+        val requestCall:Call<String> = messageService.getMessages("https://fast-citadel-44826.herokuapp.com/messages")
 
         requestCall.enqueue(object : Callback<String>{
             override fun onFailure(call: Call<String>, t: Throwable) {
-                Toast.makeText(this@WelcomeActivity,"Failed to retrieve items",Toast.LENGTH_LONG).show()
+                Toast.makeText(this@WelcomeActivity,"Failed to retrieve items faiure",Toast.LENGTH_LONG).show()
             }
 
             override fun onResponse(call: Call<String>, response: Response<String>) {
@@ -38,7 +38,7 @@ class WelcomeActivity : AppCompatActivity() {
                         message.text = msg
                     }
                 }else{
-                    Toast.makeText(this@WelcomeActivity,"Failed to retrieve items",Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@WelcomeActivity,"Failed to retrieve items o respose",Toast.LENGTH_LONG).show()
                 }
             }
 
